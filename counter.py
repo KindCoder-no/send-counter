@@ -31,7 +31,8 @@ print(Fore.GREEN+"Stop number:")
 stop_number = input()
 print(Fore.GREEN+"Wait:")
 wait = input()
-
+print(Fore.GREEN+"Custom message that is sent occasionally (leave empty if you don't want any)")
+custom_message = input()
 
 clearConsole()
 print(Fore.GREEN+ discordlogo)
@@ -70,8 +71,14 @@ while True:
     runs += 1
     clearConsole()
     print(Fore.GREEN+ discordlogo)
+    
     ##print(Fore.GREEN+'[-] Done with a run')
     print(Fore.YELLOW+"[-] DISCLAIMER: You need to have Discord open to use this script")
     print(Fore.YELLOW+"[-] Github: https://github.com/KindCoder-no/send-counter")
     print(Fore.GREEN+'[-] Total runs:', runs)
+    time.sleep(int(wait))
+    keyboard.type(custom_message)
+
+    keyboard.press(Key.enter)
+    keyboard.release(Key.enter)
     ##time.sleep(3)
